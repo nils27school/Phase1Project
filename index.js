@@ -1,4 +1,4 @@
-// fetch("http://localhost:3000/Nemisis")
+// fetch("http://localhost:3000/character")
 // .then(res => console.log(res))
 
 // console.log(NemisisData)
@@ -27,9 +27,18 @@ function renderOneCharacter(character) {
     document.querySelector('#character-list').appendChild(card)
 }
 
+function getAllCharacters(){
+    fetch('http://localhost:3000/character')
+        .then(res => res.json())
+        .then(character.data => character.forEach(character => renderOneCharacter(character))
+        console.log('before fetch returns')
+}
 // initial render
 //get data and render our character to the DOM
-function initialize() {
-    character.forEach(animal => renderOneNemisis(character))
+function initialize(){
+    getAllCharacters()
+    console.log('after get all characters')
+    // character.forEach(character => renderOneCharacter(character))
 }
+
 initialize()
