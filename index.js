@@ -1,3 +1,4 @@
-fetch("www.thecocktaildb.com/api/json/v1/1/random.php")
-.then((response) => response.json())
-.then((data) => console.log(data));
+fetch("http://localhost:3000/Nemisis")
+.then(res => console.log(res))
+
+console.log(NemisisData)
